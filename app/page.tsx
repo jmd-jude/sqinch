@@ -147,13 +147,13 @@ export default function Home() {
 
   const parseMarkdown = (text: string) => {
   return text
-    .replace(/### (.*?)(\n|$)/g, '<h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3 flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>$1</h3>')
-    .replace(/## (.*?)(\n|$)/g, '<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200">$1</h2>')
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900 bg-yellow-50 px-1 py-0.5 rounded">$1</strong>')
-    .replace(/(\d+)\.\s/g, '<div class="flex items-start mt-4"><span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white text-sm font-semibold rounded-full flex items-center justify-center mr-3 mt-0.5">$1</span><div>')
+    .replace(/### (.*?)(\n|$)/g, '<h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">$1</h3>')
+    .replace(/## (.*?)(\n|$)/g, '<h2 class="text-xl font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">$1</h2>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
+    .replace(/(\d+)\.\s+/g, '<div class="mt-4 mb-2"><span class="inline-flex items-center justify-center w-6 h-6 bg-blue-600 text-white text-sm font-medium rounded-full mr-3">$1</span>')
     .replace(/\n\n/g, '</div><br>')
-    .replace(/\n/g, '<br>');
-  };
+    .replace(/\n/g, ' ');
+};
 
   // Help content definitions
   const helpContent: Record<string, { title: string; description: string; interpretation: string }> = {
